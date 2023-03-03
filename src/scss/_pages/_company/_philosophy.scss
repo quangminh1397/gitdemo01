@@ -1,0 +1,150 @@
+.companyPhilosophy{
+  .m-post{
+    max-width: 860px;
+    margin: auto;
+    .m-txtB{
+      margin: 30px 0px 37px;
+      @include tab-mini{
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
+
+.m-companyPhilosophy{
+  &__chart{
+    &-thumb{
+      max-width: 550px;
+      margin: 0px auto 80px;
+    }
+  }
+
+  &__item{
+    &-wrap{
+      margin: 38px 0px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include tab-mini{
+        flex-direction: column;
+        margin: 20px 0px 80px;
+      }
+    }
+
+    &-thumb{
+      max-width: 316px;
+      margin-right: 60px;
+      @include tab-mini{
+        max-width: 245px;
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-content{
+      max-width: 520px;
+      &--center{
+        text-align: center;
+      }
+      @include tab-mini{
+        max-width: 100%;
+      }
+    }
+
+    &--customer{
+      .m-titleItem{
+        @include tab-mini{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__card{
+    display: flex;
+    flex-wrap: wrap;
+    &Item{
+      width: calc(100% / 3 - (80px / 3));
+      margin-right: 40px;
+      &:last-of-type{
+        margin-right: 0px;
+      }
+      @include tab-mini{
+        width: 100%;
+        margin: 0px 0px 60px;
+        &:last-of-type{
+          margin-bottom: 0px;
+        }
+      }
+
+      &-img{
+        img{
+          width: 100%;
+        }
+      }
+
+      &-title{
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.55px;
+        text-align: center;
+        color: $primary02;
+        margin: 20px 0px 16px;
+      }
+    }
+  }
+}
+
+.m-kind{
+  text-align: center;
+  padding: 80px 0px;
+  background: #f4f4f4;
+  margin-bottom: 160px;
+  @include tab-mini{
+    padding: 30px 0px;
+    margin-bottom: 80px;
+
+  }
+  &-inner{
+    max-width: 1040px;
+    background-color: #fff;
+    margin: auto;
+    padding: 30px 0px;
+    @include tab-mini{
+      margin: 0px 15px;
+    }
+  }
+  &-wrap{
+    max-width: 608px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 0px;
+    @include tab-mini{
+      padding: 0px 12px;
+    }
+  }
+  &__title{
+    font-size: 16px;
+    letter-spacing: .55px;
+    font-weight: bold;
+  }
+  &__thumb{
+    max-width: 382px;
+    margin: 30px auto;
+    @include tab-mini{
+      margin: 25px auto;
+    }
+    @include sp{
+      max-width: 287px;
+    }
+  }
+  &__txt{
+    p{
+      font-size: 14px;
+      @include tab-mini{
+        line-height: 1.57;
+        letter-spacing: 0.48px;
+      }
+    }
+  }
+}

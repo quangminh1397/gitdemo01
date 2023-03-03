@@ -1,0 +1,63 @@
+extends ../_layout/default
+block vars
+  -title        = '企業情報｜株式会社カインズ 企業サイト'
+  -description  = ''
+  -keywords     = ''
+  -og_title     = ''
+  -url          = ''
+  -pageID       = 'company'
+  -path         = '..'
+
+block container
+  -
+    var cardList = [
+      {
+        name:"トップメッセージ",
+        url:"./message/",
+        imageUrl:"/assets/images/company/img01.png"
+      },
+      {
+        name:"企業理念",
+        url:"./philosophy/",
+        imageUrl:"/assets/images/company/img02.png"
+      },
+      {
+        name:"行動方針",
+        url:"./principles/",
+        imageUrl:"/assets/images/company/img03.png"
+      },
+      {
+        name:"会社概要",
+        url:"./outline/",
+        imageUrl:"/assets/images/company/img04.png"
+      },
+      {
+        name:"アクセス",
+        url:"./access/",
+        imageUrl:"/assets/images/company/img05.png"
+      },
+      {
+        name:"役員一覧・組織図",
+        url:"./officer/",
+        imageUrl:"/assets/images/company/img06.png"
+      },
+      {
+        name:"沿革",
+        url:"./history/",
+        imageUrl:"/assets/images/company/img07.png"
+      },
+      {
+        name:"ベイシアグループについて",
+        url:"./aboutbeisia/",
+        imageUrl:"/assets/images/company/img08.png"
+      }
+    ];
+    var breadcrumbArray = [{name:'ホーム',url:'/'}];
+    var currentcrumb  = {name:'企業情報',url:'/company'};
+    var headllineData  = {titleJP: '企業情報',titleEn:'COMPANY INFO' };
+
+  +breadcrumb(breadcrumbArray,currentcrumb)
+  +headline(headllineData.titleJP,headllineData.titleEn)
+  .g-inner
+    +cardList(cardList)
+

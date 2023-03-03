@@ -1,0 +1,11 @@
+mixin breadcrumb(items=[], last)
+  .m-breadcrumb
+    .g-inner
+      ul.m-breadcrumb__list&attributes(attributes)
+        each item,index in items
+          li.m-breadcrumb__item
+            a(href=item.url title=item.name).m-breadcrumb__link= item.name
+        if last
+          li.m-breadcrumb__item
+            span.m-breadcrumb__link-current= last.name
+        else

@@ -1,0 +1,45 @@
+extends ../../_layout/default
+block vars
+  -title        = 'トップメッセージ｜企業情報｜株式会社カインズ 企業サイト'
+  -description  = ''
+  -keywords     = ''
+  -og_title     = ''
+  -url          = ''
+  -pageID       = 'companyMessage'
+  -path         = '../..'
+
+block container
+  -
+    var breadcrumbArray = [{name:'ホーム',url:'#'},{name:'企業情報',url:'#'}];
+    var currentcrumb  = {name:'トップメッセージ',url:'#'};
+    var headllineData  = {titleJP: 'トップメッセージ',titleEn:'TOP MESSAGE' };
+    var postCEOText = '株式会社カインズ　代表取締役社長 CEO';
+    var signatureImgUrl = path+'/assets/images/company/message/img_signature.png';
+
+  +breadcrumb(breadcrumbArray,currentcrumb)
+  +headline(headllineData.titleJP,headllineData.titleEn)
+
+  //- Banner module start
+  .m-banner(style="--pc: url('../../assets/images/company/message/bnr.png'); --sp: url('../../assets/images/company/message/bnr_sp.png')")
+  //- Banner module end
+  section.m-post
+    .g-inner
+      h2.m-post__title 業界の枠にとらわれず、カインズでしかつくれないビジネスモデルを追求する
+      div.m-post__content
+        p カインズは創業以来、「商業を通して社会の発展に貢献する」ことを志に、全国に展開する店舗とそこで働くメンバー（従業員）が、それぞれの地域の皆様のくらしに寄り添いながら事業活動を行ってまいりました。2021年10月末時点で、店舗数は28都道府県下に226店舗にわたり、暦年の売上は4,800億を突破しております。これも皆様のご支援の賜物と深く感謝申し上げます。
+          br
+          | カインズは、お客様一人ひとりの自分らしい暮らしをサポートするため、小売業やホームセンターの枠にとらわれないさまざまな挑戦を続けてきました。テクノロジーの急速な進化などにより、お客様の日常の暮らしやその中でのニーズが劇的に変化しており、弊社の事業も大きな変革を求められています。
+          br
+          | 1989年の創業、2007年のSPA宣言を経て、2019年を第3創業期と位置づけてスタートした、3カ年の中期経営計画「PROJECT KINDNESS」では、「次のカインズを創る」ためにさまざまな施策に取り組み、大きな変革に乗り出しています。これらの環境変化を新たな成長ステージへの大きなチャンスと捉え、店舗環境の進化や新たなサービスの創造に向けたデジタルイノベーションを推進し、日本を代表するIT小売企業となるよう邁進してまいります。
+        p また、カインズならではのライフスタイル提案も大切な柱です。特に、DIYの分野においては、くらしを良くするために自分でやってみることの全てが「DIY」であると考え、DIYの裾野を広げ、DIYを暮らしの文化として根付かせていくことを使命として取り組んでおります。中でも、DIY に取り組む方が自分らしいくらしと出会い、毎日を明るく楽しいものにすることを目指す「DIYer100 万人プロジェクト」では、店舗とオンラインを融合させた、カインズならではの DIY コミュニティ「Cainz DIY Square」を通じてDIY仲間同士の交流を促進し、DIY で得られる新しい体験や価値観をさらに豊かなものとするべくサービスを提供しています。
+        p そして、2021年10月には、それぞれの地域における困りごとや関心、ニーズに丁寧に耳を傾け、「人々が自立し、共に楽しみ、助け合える、一人ひとりが主役になれる「まち」（≒地域社会）を実現することを目指す、「くみまち」構想を策定しました。 この「くみまち」構想は、2020 年 3 月に新しく制定した企業理念にあるビジョン「世界を、日常から変える。」やプロミス「くらしに、ららら。」を具現化するものに他なりません。地域のハブとなりえる「店舗」、社名の由来ともなった KINDNESS（親切心）と、なんでも自分で取り組んでみようという DIY の精神を持ち、自らも地域にくらす約 2 万人の「メンバー」、お客様の声を生かして開発された、カインズでしか買えないくらしに寄り添う「商品」、そして IT小売企業を目指して日々磨き続ける「デジタル」の知見。これらを最大限に活用し、カインズがある全ての「まち」のくらしを、「もっと心地よく、もっと楽しく、もっと快適に」していきたいと考えております。
+        p カインズは今後も、商品やサービス、店舗、企業インフラなどすべてにおいて、従来のホームセンター・小売業の概念を超えた新しいビジネスモデルを構築し、毎日を明るく楽しいものにできる世界の実現に貢献してまいります。
+        p.m-post__signature-block
+          span.m-post__ceo=postCEOText
+          img.m-post__signature-img(src=signatureImgUrl alt='高家正行' loading='lazy')
+  //- Banner module start
+  include ../../_modules/group-links
+  //- Banner module end
+
+
+

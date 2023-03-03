@@ -1,0 +1,18 @@
+.g-inner {
+	max-width: 1080px;
+  padding: 0 20px;
+  margin: 0 auto;
+  @include tab-mini {
+    padding: 0 15px;
+  }
+  &.lg {
+    max-width: 1160px;
+  }
+}
+
+.main {
+  padding-top: 126px;
+  @include tab-land {
+    padding-top: 54px;
+  }
+}

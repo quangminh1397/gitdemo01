@@ -1,0 +1,252 @@
+extends ../../_layout/default
+block vars
+  -title        = '沿革｜企業情報｜株式会社カインズ 企業サイト'
+  -description  = ''
+  -keywords     = ''
+  -og_title     = ''
+  -url          = ''
+  -pageID       = 'companyHistory'
+  -path         = '../..'
+
+block container
+  -
+    var breadcrumbArray = [{name:'ホーム',url:path+'/'},{name:'企業情報',url:path+'/company'}];
+    var currentcrumb  = {name:'沿革',url:'#'};
+    var headllineData  = {titleJP: '沿革',titleEn:'HISTORY' };
+
+  +breadcrumb(breadcrumbArray,currentcrumb)
+  +headline(headllineData.titleJP,headllineData.titleEn)
+  .g-inner
+    .m-tabs.js-tabs
+      ul.m-tabs__nav
+        li.item
+          a.is-active(href="javascript:;" data-tab="tab01") 1978年〜
+        li.item
+          a(href="javascript:;" data-tab="tab02") 2000年〜
+        li.item
+          a(href="javascript:;" data-tab="tab03") 2010年〜
+        li.item
+          a(href="javascript:;" data-tab="tab04") 2020年〜
+      .m-tabs__content
+        .tab-block.is-active#tab01
+          dl.m-timeline
+            dt
+              .m-timeline__year 1958
+                span.jp 昭和33年
+            dd
+              .m-timeline__content
+                p.desctiption いせや設立
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_01.jpg", alt="いせや設立")
+            dt
+              .m-timeline__year 1978
+                span.jp 昭和53年
+            dd
+              .m-timeline__content
+                p.desctiption ホームセンター1号店（栃木店）オープン
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_02.jpg", alt="ホームセンター1号店（栃木店）オープン")
+            dt
+              .m-timeline__year 1984
+                span.jp 昭和59年
+            dd
+              .m-timeline__content
+                p.desctiption 東京情報センター開設
+            dt
+              .m-timeline__year 1987
+                span.jp 昭和62年
+            dd
+              .m-timeline__content
+                p.desctiption 矢板流通センター稼動
+            dt
+              .m-timeline__year 1988
+                span.jp 昭和63年
+            dd
+              .m-timeline__content
+                p.desctiption 伊勢崎流通センター稼働
+            dt
+              .m-timeline__year 1989
+                span.jp 平成元年
+            dd
+              .m-timeline__content
+                p.desctiption 株式会社カインズ設立（株式会社いせやより分社・独立）
+            dt
+              .m-timeline__year 1991
+                span.jp 平成3年
+            dd
+              .m-timeline__content
+                p.desctiption 高崎本部開設
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_03.jpg", alt="高崎本部開設")
+            dt
+              .m-timeline__year 1993
+                span.jp 平成5年
+            dd
+              .m-timeline__content
+                p.desctiption 流通技術研究所開設
+            dt
+              .m-timeline__year 1994
+                span.jp 平成3年
+            dd
+              .m-timeline__content
+                p.desctiption スーパーホームセンター1号店（伊勢崎店）オープン<br>100 店舗達成
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_04.jpg", alt="スーパーホームセンター1号店（伊勢崎店）オープン100 店舗達成")
+            dt
+              .m-timeline__year 1996
+                span.jp 平成8年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ売上1,000億円突破
+            dt
+              .m-timeline__year 1997
+                span.jp 平成9年
+            dd
+              .m-timeline__content
+                p.desctiption 総合研修センター「軽井沢倶楽部」完成
+            dt
+              .m-timeline__year 1999
+                span.jp 平成11年
+            dd
+              .m-timeline__content
+                p.desctiption カインズベストケア設立
+        .tab-block#tab02
+          dl.m-timeline
+            dt
+              .m-timeline__year 2002
+                span.jp 平成14年
+            dd
+              .m-timeline__content
+                p.desctiption 新会長・新社長就任<br>カインズフードサービス設立<br>カインズ東海センター開設<br>売上高2,000 億円達成
+            dt
+              .m-timeline__year 2003
+                span.jp 平成15年
+            dd
+              .m-timeline__content
+                p.desctiption カインズベイシア長野流通センター開設<br>東金流通センター開設
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_05.jpg", alt="カインズベイシア長野流通センター開設東金流通センター開設")
+            dt
+              .m-timeline__year 2004
+                span.jp 平成16年
+            dd
+              .m-timeline__content
+                p.desctiption カインズモール浜松都田テクノオープン（カインズモール１号店）<br>名古屋流通センター稼働
+            dt
+              .m-timeline__year 2006
+                span.jp 平成18年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ ザスパ草津のスポンサード開始<br>出店エリア20都府県突破<br>上海事務所開設<br>カインズオンラインショップ開設<br>売上高3,000億円突破
+            dt
+              .m-timeline__year 2007
+                span.jp 平成19年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ総合保険サービス設立<br>カインズSPA宣言<br>藤枝流通センター・川越流通センター稼働
+            dt
+              .m-timeline__year 2008
+                span.jp 平成20年
+            dd
+              .m-timeline__content
+                p.desctiption 北海道初出店（FC大曲店）
+            dt
+              .m-timeline__year 2009
+                span.jp 平成21年
+            dd
+              .m-timeline__content
+                p.desctiption ベイシアグループ創業50周年<br>カインズ設立20周年<br>上海流通センター・青島流通センター・深圳流通センター稼働
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_06.jpg", alt="ベイシアグループ創業50周年カインズ設立20周年上海流通センター・青島流通センター・深圳流通センター稼働")
+        .tab-block#tab03
+          dl.m-timeline
+            dt
+              .m-timeline__year 2010
+                span.jp 平成22年
+            dd
+              .m-timeline__content
+                p.desctiption 神戸流通センター稼働<br>中国に現地法人「家迎知商貿有限公司」設立<br>上海物流センター稼働
+            dt
+              .m-timeline__year 2011
+                span.jp 平成23年
+            dd
+              .m-timeline__content
+                p.desctiption 沖縄県初出店（FCサンプラザ糸満店）<br>新矢板流通センター稼働
+            dt
+              .m-timeline__year 2012
+                span.jp 平成24年
+            dd
+              .m-timeline__content
+                p.desctiption 太田海外商品専用センター稼働<br>深圳物流センター稼働<br>本庄早稲田本部開設（高崎本部から移転）
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_07.jpg", alt="太田海外商品専用センター稼働深圳物流センター稼働本庄早稲田本部開設（高崎本部から移転）")
+            dt
+              .m-timeline__year 2013
+                span.jp 平成25年
+            dd
+              .m-timeline__content
+                p.desctiption 札幌流通センター稼働<br>カインズフードサービス CAFE BRICCO初出店
+            dt
+              .m-timeline__year 2014
+                span.jp 平成26年
+            dd
+              .m-timeline__content
+                p.desctiption CIを変更<br>カインズ消費税免税対応18店舗にて開始
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_08.png", alt="CIを変更カインズ消費税免税対応18店舗にて開始")
+            dt
+              .m-timeline__year 2015
+                span.jp 平成27年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ・ビジネスサービス特例子会社認定<br>200店舗突破<br>カインズ埼玉県障害者雇用優良事業所認定<br>前橋資材専用センター稼働
+            dt
+              .m-timeline__year 2016
+                span.jp 平成28年
+            dd
+              .m-timeline__content
+                p.desctiption 九州初出店（福岡新宮店）
+            dt
+              .m-timeline__year 2017
+                span.jp 平成29年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ売上4,000億円突破<br>広島県初出店（広島LECT(レクト)店）<br>ホーチミン事務所開設・ホーチミン流通センター稼働<br>中国ECサイト「天猫(T-MALL)」にオンラインショップ開設<br>カインズ(株)大都と業務資本提携締結<br>都市型新店舗「StyleFactory」1号店オープン（テラッセ納屋橋店：現在は閉店）
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_09.jpg", alt="カインズ売上4,000億円突破広島県初出店（広島LECT(レクト)店）ホーチミン事務所開設・ホーチミン流通センター稼働中国ECサイト「天猫(T-MALL)」にオンラインショップ開設カインズ(株)大都と業務資本提携締結都市型新店舗「StyleFactory」1号店オープン（テラッセ納屋橋店：現在は閉店）")
+            dt
+              .m-timeline__year 2018
+                span.jp 平成30年
+            dd
+              .m-timeline__content
+                p.desctiption カインズデザイン展（現アトリエカインズ）開始<br>くみまちモール1号店オープン（前橋小島田店）<br>福岡流通センター・厚木流通センター稼働<br>カインズ厚木流通センター開設
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_10.jpg", alt="カインズデザイン展（現アトリエカインズ）開始くみまちモール1号店オープン（前橋小島田店）福岡流通センター・厚木流通センター稼働カインズ厚木流通センター開設")
+        .tab-block#tab04
+          dl.m-timeline
+            dt
+              .m-timeline__year 2020
+                span.jp 令和2年
+            dd
+              .m-timeline__content
+                p.desctiption カインズ表参道にカインズイノベーションハブ開設<br>カインズペットメディア「WanQol」開設<br>カインズCAINZ Pick Up全店展開<br>カインズオウンドメディア「となりのカインズさん」開設<br>会員制建築プロ専門ショップ「C'zPRO」1号店オープン（東名横浜店）<br>ザスパクサツ群馬に資本経営参画 ザスパ共創プロジェクトスタート
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_11.jpg", alt="カインズ表参道にカインズイノベーションハブ開設カインズペットメディア「WanQol」開設カインズCAINZ Pick Up全店展開カインズオウンドメディア「となりのカインズさん」開設会員制建築プロ専門ショップ「C'zPRO」1号店オープン（東名横浜店）ザスパクサツ群馬に資本経営参画 ザスパ共創プロジェクトスタート")
+            dt
+              .m-timeline__year 2021
+                span.jp 令和3年
+            dd
+              .m-timeline__content
+                p.desctiption カインズunerryと資本業務提携契約を締結<br>カインズ「くみまち構想」を策定<br>カインズ2050年カーボンゼロ達成目標を策定
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_12.jpg", alt="カインズunerryと資本業務提携契約を締結カインズ「くみまち構想」を策定カインズ2050年カーボンゼロ達成目標を策定")
+            dt
+              .m-timeline__year 2022
+                span.jp 令和4年
+            dd
+              .m-timeline__content
+                p.desctiption カインズファーストグループと資本業務提携契約を締結<br>カインズ企業版ふるさと納税でザスパ練習施設等に関する基本協定を締結<br>カインズ東急ハンズがカインズグループに<br>カインズオートアールズがカインズグループに<br>カインズカヤックと資本業務提携契約を締結<br>カインズ初のCO2フリー店舗開店（壬生店）
+                figure.image
+                  img(src=path+"/assets/images/company/history/img_history_13.jpg", alt="カインズファーストグループと資本業務提携契約を締結カインズ企業版ふるさと納税でザスパ練習施設等に関する基本協定を締結カインズ東急ハンズがカインズグループにカインズオートアールズがカインズグループにカインズカヤックと資本業務提携契約を締結カインズ初のCO2フリー店舗開店（壬生店）")
+
+  include ../../_modules/group-links

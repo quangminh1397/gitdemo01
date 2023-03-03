@@ -1,0 +1,120 @@
+extends ../../_layout/default
+block vars
+  -title        = '行動方針｜企業情報｜株式会社カインズ 企業サイト'
+  -description  = ''
+  -keywords     = ''
+  -og_title     = ''
+  -url          = ''
+  -pageID       = 'companyPrinciples'
+  -path         = '../..'
+
+block container
+  -
+    var breadcrumbArray = [{name:'ホーム',url:path+'/'},{name:'企業情報',url:path+'/company'}];
+    var currentcrumb  = {name:'行動方針',url:'#'};
+    var headllineData  = {titleJP: '行動方針',titleEn:'POLICY' };
+    var bannerImgSrc = path+'/assets/images/company/principles/img_banner.png';
+    var beisiaConduct = {
+      title: 'ベイシアグループ 行動憲章',
+      imgSrc: path+'/assets/images/company/principles/img_bitmap.png',
+      alt:'ベイシアグループ 行動憲章',
+      downloadUrl:'#'
+    };
+
+  +breadcrumb(breadcrumbArray,currentcrumb)
+  +headline(headllineData.titleJP,headllineData.titleEn)
+
+  .m-banner(style="--pc: url('../../assets/images/company/principles/bnr.png'); --sp: url('../../assets/images/company/principles/bnr_sp.png')")
+  section.companyPrinciples__content
+    .g-inner
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span サービス方針
+        h3.m-titleSub 「すべての人にKindnessを提供する」
+        .companyPrinciples__item-content 
+          p お客様はもちろん、お取引先・全社員を含め、全ての人に親切心や思いやりを持って接し、「たくさんの笑顔をつくりたい」という想いのもとでサービスを提供しています。
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span 信条
+        .companyPrinciples__item-content
+          p カインズの創業以来の信条に「3つの満足」があります。
+          table(style="width:100%").m-table 
+            tbody.m-table__body
+              tr 
+                th お客様の満足
+                  span Satisfaction Always
+                td 
+                  p お客様の満足の追求と実現がわれわれのすべてにわたる判断基準である
+                  ul.m-listDisc
+                    li バリアフリーの推進
+                    li フレンドリーサービスとクリンリネスの徹底
+              tr 
+                th お取引先の満足
+                  span Partnership
+                td 
+                  p お取引先の満足なしでは売れるものを継続的に安く確保することはできない
+                  ul.m-listDisc
+                    li キャッシュペイメント（現金決済制度）
+                    li 商品買取制度
+              tr 
+                th 社員の満足
+                  span CAINZ is People
+                td 
+                    p 社員の満足がチャレンジする社風を支えすべてを推進する力となる
+                    ul.m-listDisc
+                      li プロフィットシェアリング（利益還元制度）
+                      li 充実した教育制度
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span クリーンポリシー
+        p.companyPrinciples__item-content カインズは次のような「クリーンポリシー」を掲げ、公正・公明な企業をめざしています。
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span 三つの誓い
+        .companyPrinciples__item-content
+          ul.m-listDash
+            li 私達は取引先よりの金品の贈受・貸借又酒食の供応は受けません
+            li 私達は上司へはもちろん社員間の虚礼はいたしません
+            li 私達は部下及び社員間の金銭貸借はいたしません
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span 経営基本方針
+        .companyPrinciples__item-content
+          .companyPrinciples__item-sub
+            h3.m-titleSub マウンテンチェーンの展開
+            p うるおいと節約を提供する店舗と業態を開発しつづけ“商の山脈”をつくりあげる
+          .companyPrinciples__item-sub
+            h3.m-titleSub エブリデー・ロープライスの実践
+            p 高速回転の追求と簡素で効果的なローコスト経営に徹し“安く売っても もうかる仕組み”を確立する
+          .companyPrinciples__item-sub
+            h3.m-titleSub 全員参加の経営
+            p 人間尊重の精神で人の育つ環境をつくり衆知を集め絶えずイノベーションに挑戦する
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span 社員の行動指針
+        .companyPrinciples__item-content
+          .companyPrinciples__challenges
+            p “CAINZ is Dedicated to Challenge”－カインズは絶えず挑戦する
+            ul.m-listDisc
+              li お客様と仕事に常に関心を持ち自ら学び考える（Interest）
+              li 常にお客様の身になって工夫と改善を積み重ねる（Improvement）
+              li 積極的な提案と実践が革新を生み出す（Innovation）
+              li 高い目標を持ち具体的な計画を立てる（Desire）
+              li スピーディに決断し、タイムリーに対応する（Decision）
+              li パーシステンスの精神で最後までやりぬく（Dedication）
+              li 仕事にはプライオリティをそしてポイントに集中する（Concentration）
+              li 報告・連絡・相談は組織を動かす命綱（Communication）
+              li 失敗をおそれず挑戦し新鮮な心とロマンを持ちつづける（Challenge）
+      .companyPrinciples__item
+        h2.m-titleBorder
+          span=beisiaConduct.title
+        .companyPrinciples__item-content
+          .companyPrinciples__beisia
+            a(href=beisiaConduct.downloadUrl,download,target="_blank").companyPrinciples__beisia-link
+              img(src=beisiaConduct.imgSrc, alt=beisiaConduct.alt).companyPrinciples__beisia-img
+              span.companyPrinciples__beisia-title=beisiaConduct.title+'(PDF)'
+  include ../../_modules/group-links
+
+
+
+

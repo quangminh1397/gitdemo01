@@ -1,0 +1,135 @@
+.newsSearch {
+  &__box {
+    border-radius: 10px;
+    box-shadow: 0 12px 33px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 40px 60px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #212121;
+    margin-bottom: 26px;
+  }
+  &__form {
+    &__row {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    &__block {
+      display: flex;
+      flex-direction: column;
+
+      .block-select {
+        display: flex;
+        width: 110px;
+        position: relative;
+      }
+    }
+    .gr-select {
+      display: flex;
+      gap: 10px;
+    }
+    &__btn {
+      text-align: center;
+    }
+  }
+  .m-list-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    > li {
+      margin-right: 19px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.newsResult {
+  padding-bottom: 116px;
+  @include tab-mini {
+    padding-bottom: 80px;
+  }
+  &-head {
+    margin-bottom: 40px;
+    &__text {
+      font-size: 14px;
+      line-height: 1.71;
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+    margin-bottom: 60px;
+    @include sp {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 15px;
+    }
+    &__item {
+      display: flex;
+      column-gap: 15px;
+      @include sp {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+      }
+      &:hover {
+        .newsResult-list__item--name {
+          color: $primary01;
+        }
+      }
+      &--thumb {
+        min-width: 150px;
+        max-width: 150px;
+        @include sp {
+          max-width: 120px;
+          min-width: 120px;
+        }
+      }
+      &--description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include tab-mini {
+          row-gap: 18px;
+        }
+        @include sp {
+          row-gap: 6px;
+        }
+      }
+      &--name {
+        font-size: 14px;
+        line-height: 1.3;
+        @include tab-mini {
+          max-height: 56px;
+          overflow: hidden;
+        }
+        @include sp {
+          max-height: none;
+          min-height: 74px;
+        }
+      }
+      &--wrap {
+        display: flex;
+        column-gap: 10px;
+      }
+      &--date {
+        font-size: 13px;
+        line-height: 1.3;
+        color: #777;
+      }
+      &--category {
+        font-size: 11px;
+        line-height: 1.3;
+        color: #000;
+        padding: 3px 8px;
+        display: inline-block;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+    }
+  }
+}

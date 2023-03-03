@@ -1,0 +1,48 @@
+/*=========================================================
+    company message
+=========================================================*/
+.companyMessage {
+  .m-post {
+    margin-bottom: 160px;
+    @include tab-mini {
+      margin-bottom: 80px;
+    }
+    &__title,
+    &__content {
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__content {
+      p {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0.48px;
+        color: $c-text-black-light;
+      }
+      p + p {
+        margin-top: 3rem;
+      }
+      @include tab-mini {
+        margin-top: 30px;
+      }
+    }
+    &__signature-block {
+      p {
+        &.m-post__ceo {
+          font-size: 16px;
+          letter-spacing: 0.55px;
+        }
+      }
+    }
+    &__signature-img {
+      margin-top: 16px;
+    }
+  }
+  .m-banner + .m-post {
+    margin-top: 40px;
+    @include tab-mini{
+      margin-top: 30px;
+    }
+  }
+}

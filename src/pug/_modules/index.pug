@@ -1,0 +1,25 @@
+block module
+  div
+    .g-inner
+      h2 Breadcrumb
+      // Breadcrumb 2 level
+    +breadcrumb([{name:'ホーム',url:'#'},{name:'企業情報',url:'#'}],{name:'企業情報',url:'#'})
+    br
+    br
+    // Breadcrumb 1 level
+    +breadcrumb([{name:'ホーム',url:'#'}],{name:'企業情報',url:'#'})
+  div
+    .g-inner
+      h2 Headline
+    +headline('企業情報','COMPANY INFO')
+  div
+    .g-inner
+      h2 Card item
+      +cardItem(cardItem)
+  div
+    .g-inner
+      h2 Bar
+      .m-titleBar CAINZ INNOVATION HUB（カインズイノベーションハブ）
+      br
+      br
+      .m-titleBar.m-titleBar--full-width CAINZ INNOVATION HUB（カインズイノベーションハブ）

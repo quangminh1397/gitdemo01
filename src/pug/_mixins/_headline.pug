@@ -1,0 +1,11 @@
+mixin headline(title, titleEn,isCenter=true)
+  if isCenter
+    .m-headlineSecondary(data-bg-text=titleEn)
+      .g-inner
+        h1.m-headlineSecondary__title.m-headlineSecondary__title--center=titleEn
+          span.m-headlineSecondary__title-jp.m-headlineSecondary__title-jp--center=title
+  else
+    .m-headlineSecondary(data-bg-text=titleEn)
+      .g-inner
+        h1.m-hdlineSecondary__title=titleEn
+          span.m-headlineSecondary__title-jp=title

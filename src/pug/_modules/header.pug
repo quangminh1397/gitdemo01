@@ -1,0 +1,211 @@
+-
+  var companyLink = '/company/';
+  var messageCompanyLink = '/company/message/';
+  var philosophyCompanyLink = '/company/philosophy/';
+  var principlesCompanyLink = '/company/principles/';
+  var outlineCompanyLink = '/company/outline/';
+  var accessCompanyLink = '/company/access/';
+  var officerCompanyLink = '/company/officer/';
+  var historyCompanyLink = '/company/history/';
+  var aboutbeisiaCompanyLink = '/company/aboutbeisia/';
+  var newsLink = '/news/';
+  var contentsLink = '/contents/';
+  var aboutusLink = '/aboutus/';
+  var productAboutusLink = '/aboutus/product/';
+  var storeAboutusLink = '/aboutus/store/';
+  var logisticsAboutusLink = '/aboutus/logistics/';
+  var qualityAboutusLink = '/aboutus/quality/';
+  var digitalAboutusLink = '/aboutus/digital/';
+  var diyhrAboutusLink = '/aboutus/diyhr/';
+  var kumimachiAboutusLink = '/aboutus/kumimachi/';
+  var partnersLink = '/partners/';
+  var franchisePartnersLink = '/franchise/';
+  var eventPartnersLink = '/event/';
+  var sitePartnersLink = '/site/';
+  var constructionPartnersLink = '/construction/';
+  var wholesalePartnersLink = '/wholesale/';
+  var tenantPartnersLink = '/tenant/';
+
+  var globalCainzMenus = [
+    {name: 'オンラインショップ', url: 'https://www.cainz.com/', target: "_blank"},
+    {name: 'リフォーム', url: 'https://reform.cainz.com/', target: "_blank"},
+    {name: 'ペッツワン', url: 'https://petsone.cainz.com/', target: "_blank"},
+    {name: 'Reserve', url: 'https://reserve.cainz.com/', target: "_blank"},
+    {name: 'DIY STYLE', url: 'https://diy-style.cainz.com/', target: "_blank"},
+    {name: 'Style Factory', url: 'https://style-factory.cainz.com/', target: "_blank"},
+    {name: '企業サイト', url: 'https://www.cainz.co.jp/', target: "_blank"},
+  ]
+
+  var corpMenus = [
+    {name: '企業情報', url: companyLink},
+    {name: 'ニュースリリース', url: newsLink},
+    {name: 'コンテンツ', url: contentsLink},
+    {name: 'カインズについて', url: aboutusLink},
+    {name: 'ビジネスパートナー募集', url: partnersLink},
+    {name: '採用情報', url: 'https://recruit.cainz.com/'},
+    {name: 'EN', url: 'https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://www.cainz.co.jp/'},
+  ]
+
+  var companyMenus = [
+    {name: 'トップメッセージ', url: messageCompanyLink},
+    {name: '企業理念', url: philosophyCompanyLink},
+    {name: '行動方針', url: principlesCompanyLink},
+    {name: '会社概要', url: outlineCompanyLink},
+    {name: 'アクセス', url: accessCompanyLink},
+    {name: '役員一覧・組織図', url: officerCompanyLink},
+    {name: '沿革', url: historyCompanyLink},
+    {name: 'ベイシアグループについて', url: aboutbeisiaCompanyLink},
+  ]
+
+  var aboutCainzMenus = [
+    {name: '商品開発（SBU戦略）', url: productAboutusLink},
+    {name: '店舗について', url: storeAboutusLink},
+    {name: 'ロジティクス', url: logisticsAboutusLink},
+    {name: '品質管理', url: qualityAboutusLink},
+    {name: 'デジタル戦略', url: digitalAboutusLink},
+    {name: '人事戦略（DIY HR）', url: diyhrAboutusLink},
+    {name: 'くみまち構想', url: kumimachiAboutusLink},
+  ]
+
+  var businessMenus = [
+    {name: 'フランチャイズ募集', url: franchisePartnersLink},
+    {name: '催事募集', url: eventPartnersLink},
+    {name: '出店用地募集', url: sitePartnersLink},
+    {name: '施工業者募集', url: constructionPartnersLink},
+    {name: '商品関連お取引業者募集', url: wholesalePartnersLink},
+    {name: 'テナント募集', url: tenantPartnersLink},
+  ]
+
+mixin navigation(arrs)
+  ul
+    each link in arrs
+      li
+        if link.target
+          a(href=link.url, target=link.target) !{link.name}
+        else
+          a(href=link.url) !{link.name}
+
+header.m-header
+  .m-header__top
+    .m-header__top-inner
+      nav.m-header__top-menu
+        +navigation(globalCainzMenus)
+
+  .m-header__bottom
+    .m-header__bottom-inner
+      if pageID === 'homepage'
+        h1.m-header__logo
+          a(href="/")
+            img(src=path+"/assets/images/common/logo_header.svg", alt="CAINZ")
+      else
+        .m-header__logo
+          a(href="/")
+            img(src=path+"/assets/images/common/logo_header.svg", alt="CAINZ")
+      nav.m-header__bottom-menu
+        ul
+          li
+            a(href=companyLink) 企業情報
+            .m-header__subMenu
+              .m-header__boxMenu
+                .m-header__thumbMenu
+                  .m-header__thumbMenu-img
+                    img(src="https://dummyimage.com/526x278", alt="企業情報")
+                  .m-header__thumbMenu-japanese 企業情報
+                  .m-header__thumbMenu-english COMPANY INFO
+                .m-header__navMenu
+                  +navigation(companyMenus)
+                .m-header__btnLink
+                  a(href=companyLink, class="m-header__btnLink-text") 企業情報トップ
+          li
+            a(href=newsLink) ニュースリリース
+          li
+            a(href=contentsLink) コンテンツ
+          li
+            a(href=aboutusLink) カインズについて
+            .m-header__subMenu
+              .m-header__boxMenu
+                .m-header__thumbMenu
+                  .m-header__thumbMenu-img
+                    img(src="https://dummyimage.com/526x278", alt="カインズについて")
+                  .m-header__thumbMenu-japanese カインズについて
+                  .m-header__thumbMenu-english ABOUT CAINZ
+                .m-header__navMenu
+                  +navigation(aboutCainzMenus)
+          li
+            a(href=partnersLink) ビジネスパートナー募集
+            .m-header__subMenu
+              .m-header__boxMenu
+                .m-header__thumbMenu
+                  .m-header__thumbMenu-img
+                    img(src="https://dummyimage.com/526x278", alt="ビジネスパートナー募集")
+                  .m-header__thumbMenu-japanese ビジネスパートナー募集
+                  .m-header__thumbMenu-english Looking for business
+                .m-header__navMenu
+                  +navigation(businessMenus)
+          li
+            a(href='https://recruit.cainz.com/', target="_blank") 採用情報
+          li
+            a(href='https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://www.cainz.co.jp/', target="_blank") EN
+
+      .m-menuToggle
+        .m-menuToggle__hamburger
+          input(type="checkbox" class="m-menuToggle__hamburger-button js-humburger-btn")
+          .m-menuToggle__hamburger-line
+            span 1
+            span 2
+            span 3
+        .m-menuToggle__content.js-menu-content
+          nav.m-menuToggle__content-item
+            h2.m-menuToggle__content-item--title 最新情報
+            ul.m-menuToggle__content-item--list
+              li
+                a(href=newsLink) ニュースリリース
+              li
+                a(href=contentsLink) コンテンツ
+
+          nav.m-menuToggle__content-item
+            h2.m-menuToggle__content-item--title 総合情報
+            ul.m-menuToggle__content-item--list
+              li
+                .m-menuToggle__according
+                  input(type="checkbox")
+                  a(href=companyLink, class="m-menuToggle__according-text") 企業情報
+                  .m-menuToggle__according-content
+                    +navigation(companyMenus)
+                    .m-header__btnLink
+                      a(href=companyLink, class="m-header__btnLink-text") 企業情報トップ
+                  .m-menuToggle__according-icon
+              li
+                .m-menuToggle__according
+                  input(type="checkbox")
+                  a(href=aboutusLink, class="m-menuToggle__according-text") カインズについて
+                  .m-menuToggle__according-content
+                    +navigation(aboutCainzMenus)
+                  .m-menuToggle__according-icon
+              li
+                .m-menuToggle__according
+                  input(type="checkbox")
+                  a(href=partnersLink, class="m-menuToggle__according-text") ビジネスパートナー募集
+                  .m-menuToggle__according-content
+                    +navigation(businessMenus)
+                  .m-menuToggle__according-icon
+              li
+                a(href="https://recruit.cainz.com/", target="_blank") 採用情報
+
+          nav.m-menuToggle__globalMenu
+            ul.m-menuToggle__globalMenu-list
+              li
+                a(href="https://www.cainz.com/", target="_blank") オンラインショップ
+              li
+                a(href="https://reform.cainz.com/", target="_blank") リフォーム
+              li
+                a(href="https://reserve.cainz.com/", target="_blank") Reserve
+              li
+                a(href="https://petsone.cainz.com/", target="_blank") ペッツワン
+              li
+                a(href="https://diy-style.cainz.com/", target="_blank") DIY STYLE
+              li
+                a(href="https://style-factory.cainz.com/", target="_blank") Style Factory
+              li
+                a(href="https://translate.google.com/translate?hl=&sl=ja&tl=en&u=https://www.cainz.co.jp/", target="_blank") EN
+
