@@ -1,2 +1,3 @@
-testttttttttttttttttttttttt
- testtttttttttt demo
+install nvm
+
+change version node 14.18.0
