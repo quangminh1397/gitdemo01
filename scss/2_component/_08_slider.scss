@@ -1,0 +1,242 @@
+.c-slider01 {
+  .slick-prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #fff !important;
+    z-index: 9;
+    &::before {
+      content: "";
+      width: 40px;
+      height: 15px;
+      background: url("/assets/images/arrow_icon02.png") no-repeat center;
+      background-size: contain;
+      transform: rotate(180deg);
+      display: block;
+    }
+    @include max(1024px) {
+      width: 50px;
+      height: 50px;
+    }
+    &::before {
+      width: 30px;
+      height: 12px;
+    }
+  }
+  .slick-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #fff !important;
+    z-index: 9;
+    &::before {
+      content: "";
+      width: 40px;
+      height: 15px;
+      background: url("/assets/images/arrow_icon02.png") no-repeat center;
+      background-size: contain;
+      display: block;
+    }
+    @include max(1024px) {
+      width: 50px;
+      height: 50px;
+    }
+    &::before {
+      width: 30px;
+      height: 12px;
+    }
+  }
+  .slick-dots {
+    bottom: -65px;
+    li {
+      button:before {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #000936;
+        opacity: 1;
+      }
+      &.slick-active button:before {
+        background: #000936;
+      }
+    }
+    @include max(1024px) {
+      bottom: -40px;
+      li {
+        width: 10px;
+        height: 10px;
+        button:before {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+  .items {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.15));
+    margin: 0 10px;
+    @include max(1024px) {
+      border-radius: 5px;
+      margin: 0 5px;
+    }
+    a {
+      color: #000936;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    figure {
+      line-height: 0;
+      margin-bottom: 15px;
+    }
+    .sec {
+      padding: 0 20px 25px;
+      h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .list-tag {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 -10px;
+        li {
+          height: 28px;
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #000;
+          font-size: 14px;
+          border: 1px solid #000000;
+          border-radius: 2px;
+          padding: 5px 10px;
+          &:not(:last-child) {
+            margin: 0 10px 10px 0;
+          }
+        }
+      }
+      .tag {
+        display: inline-flex;
+        height: 34px;
+        width: auto;
+        align-items: center;
+        justify-content: center;
+        background: #000936;
+        color: #fff;
+        font-size: 12px;
+        padding: 5px 20px;
+        margin-bottom: 10px;
+      }
+      @include max(1024px) {
+        padding: 0 15px 15px;
+        h4 {
+          font-size: 15px;
+        }
+        .list-tag {
+          margin: 0 0 -5px;
+          li {
+            height: 25px;
+            font-size: 12px;
+            padding: 5px 5px;
+            &:not(:last-child) {
+              margin: 0 5px 5px 0;
+            }
+          }
+        }
+        .tag {
+          height: 25px;
+          padding: 5px 5px;
+        }
+      }
+      @include max(1024px) {
+        padding: 0 3vw 15px;
+      }
+    }
+  }
+}
+
+.person-slider {
+  color: #fff;
+  .items {
+    padding: 40px;
+    @include max(1024px) {
+      padding: 30px 3vw 20px;
+    }
+    figure {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 30px;
+    }
+    .block {
+      h4 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.67;
+        text-align: center;
+        margin-bottom: 25px;
+        @include max(1024px) {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+      }
+      p:not(:last-child) {
+        line-height: 1.375;
+        margin-bottom: 20px;
+        @include max(1024px) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .slick-dots {
+    li {
+      button:before {
+        opacity: 1;
+      }
+      &.slick-active button:before {
+        background: #0779f1;
+      }
+      button:focus:before,
+      button:hover:before {
+        background: #0779f1;
+      }
+    }
+  }
+  .slick-prev {
+    left: 50px;
+    top: 100px;
+    z-index: 9;
+    &::before {
+      content: "";
+      width: 40px;
+      height: 15px;
+      background: url("/assets/images/arrow_icon01.png") no-repeat center;
+      background-size: contain;
+      transform: rotate(180deg);
+      display: block;
+    }
+  }
+  .slick-next {
+    right: 50px;
+    top: 100px;
+    z-index: 9;
+    &::before {
+      content: "";
+      width: 40px;
+      height: 15px;
+      background: url("/assets/images/arrow_icon01.png") no-repeat center;
+      background-size: contain;
+      display: block;
+    }
+  }
+}

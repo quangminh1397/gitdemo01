@@ -1,0 +1,223 @@
+/*------------------------------------------------------------
+	Header
+------------------------------------------------------------*/
+.m-header {
+  background-color: $color-main;
+  padding: 20px 0;
+  @include max(1024px) {
+    padding: 10px 0;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    @include max(1024px) {
+      margin: 0;
+    }
+  }
+  &__logo {
+    flex-shrink: 0;
+    margin-right: 20px;
+    @include max(1024px) {
+      width: 220px;
+      margin: 0;
+    }
+    a {
+      display: block;
+      line-height: 0;
+    }
+  }
+  &__boxright {
+    display: flex;
+    align-items: center;
+    > div:not(:last-child) {
+      margin-right: 40px;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+    }
+    @include max(1024px) {
+      display: none;
+    }
+  }
+  &__phone {
+    flex-shrink: 0;
+    a::before {
+      content: "";
+      width: 34px;
+      height: 34px;
+      background: url(../images/phone_icon01.png) no-repeat center;
+      background-size: contain;
+      position: relative;
+      margin-right: 10px;
+    }
+  }
+  &__mail {
+    flex-shrink: 0;
+    a::before {
+      content: "";
+      width: 34px;
+      height: 34px;
+      background: url(../images/email_icon01.png) no-repeat center;
+      background-size: contain;
+      position: relative;
+      margin-right: 10px;
+    }
+  }
+  &__search {
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    @include max(1024px) {
+      width: 33vw;
+    }
+    input {
+      width: 100%;
+      height: 42px;
+      border: none;
+      font-size: 16px;
+      padding: 10px 60px 10px 10px;
+      ::placeholder {
+        font-size: 16px;
+        color: #7c7c7c;
+        font-weight: 400;
+        font-style: italic;
+      }
+    }
+    .btn_search {
+      width: 50px;
+      height: 100%;
+      background: #0779f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: url(../images/search_btn.png) no-repeat center;
+        background-size: contain;
+        display: block;
+      }
+    }
+  }
+  &__bottom {
+    &--menu {
+      display: flex;
+      justify-content: space-between;
+      @include max(1024px) {
+        display: none;
+      }
+      > li {
+        > a,
+        > span {
+          color: #fff;
+          font-size: 18px;
+          font-weight: 700;
+          @include max(1200px) {
+            font-size: 16px;
+          }
+          cursor: pointer;
+        }
+        &.sub:hover {
+          > .m-header__submenu{
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+  &__submenu {
+    background-color: #000936;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    padding-top: 40px;
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: url(../images/submenu_bg.png) no-repeat center;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    a:hover {
+      opacity: .7;
+    }
+    ul {
+      display: flex;
+      max-width: calc(1200px + 6vw);
+      position: relative;
+      z-index: 2;
+      padding: 30px 3vw 20px;
+      margin: 0 auto;
+      li {
+        figure {
+          line-height: 0;
+          background: #fff;
+        }
+        figcaption {
+          color: #000936;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 1.75;
+          padding: 10px 15px;
+        }
+        p {
+          color: #fff;
+          display: -webkit-box;
+          line-height: 1.5;
+          height: calc(1em * 2 * 1.5);
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          margin-top: 15px;
+        }
+      }
+    }
+    .submenu01 {
+      gap: 40px;
+      li {
+        width: calc(25% - 30px);
+      }
+    }
+    .submenu02 {
+      gap: 30px;
+      li {
+        width: calc((100% - 90px) / 3);
+        figure {
+          border-radius: 8px;
+          overflow: hidden;
+        }
+      }
+    }
+    .submenu03 {
+      gap: 20px;
+      li {
+        width: calc(20% - 20px);
+      }
+    }
+  }
+}

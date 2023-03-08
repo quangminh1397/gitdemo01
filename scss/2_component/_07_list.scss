@@ -1,0 +1,140 @@
+/*------------------------------------------------------------
+	List
+-----------------------------------------------------------*/
+
+.list-2cols {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 -40px;
+  @include max(767px) {
+    flex-direction: column;
+    margin: 0 0 -30px;
+  }
+  > li {
+    width: calc(50% - 20px);
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 0 40px;
+    a {
+      color: #000;
+    }
+    figure {
+      line-height: 0;
+      margin-bottom: 25px;
+      @include max(1024px) {
+        margin-bottom: 15px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @include max(1024px) {
+      width: calc(50% - 15px);
+    }
+    @include max(767px) {
+      width: 100%;
+      border-radius: 5px;
+      margin: 0 0 30px;
+    }
+  }
+}
+
+.list-3cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -15px -30px;
+  > li {
+    width: calc((100% - 90px) / 3);
+    background: #ffffff;
+    border-radius: 10px;
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.15));
+    overflow: hidden;
+    margin: 0 15px 30px;
+    figure {
+      line-height: 0;
+    }
+    .sec {
+      text-align: center;
+	  padding: 20px 20px 30px;
+      .ttl {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .txt {
+        color: #000;
+        margin-bottom: 15px;
+      }
+      .link {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 14px;
+        &::after {
+          content: "";
+          width: 30px;
+          height: 12px;
+          background: url("/assets/images/arrow_icon02.png") no-repeat center;
+          background-size: contain;
+          position: relative;
+          display: block;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+.list-4cols {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -20px -50px;
+  @include max(1024px) {
+    margin: 0 -10px -30px;
+  }
+
+  > li {
+    width: calc(25% - 40px);
+    margin: 0 20px 50px;
+    @include max(1024px) {
+      width: calc(25% - 20px);
+      margin: 0 10px 30px;
+    }
+    @include max(767px) {
+      width: calc(50% - 20px);
+      max-width: 180px;
+    }
+    figure {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      img {
+        transition: all 0.5s ease;
+      }
+    }
+    > a {
+      display: block;
+      color: #000936;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      @include max(1024px) {
+        font-size: 15px;
+      }
+      &:hover {
+        img {
+          transform: scale(1.1, 1.1);
+        }
+      }
+    }
+  }
+}

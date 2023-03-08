@@ -1,0 +1,11 @@
+mixin mainvSlider(h2text,text,items=[])
+  .m-mainv 
+    .inner
+      .m-mainv__cont
+        h2=h2text
+        p=text
+      .m-mainv__slider
+        ul.mainv-slider&attributes(attributes)
+          each item,index in items
+            li.items
+              img(src=item.src, alt=item.alt)

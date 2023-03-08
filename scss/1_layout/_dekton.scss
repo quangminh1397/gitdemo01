@@ -1,0 +1,184 @@
+#dekton_box01 {
+  padding: 150px 0 100px;
+  .m-block03 {
+    figure {
+      &::after {
+        width: 59px;
+        height: 294px;
+        background: url("/assets/images/dekton/text_dekton.png") no-repeat
+          center;
+        background-size: contain;
+      }
+    }
+  }
+}
+#dekton_box02 {
+  position: relative;
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 5.208vw;
+      background: url("/assets/images/dekton/bg01.png") no-repeat center bottom;
+      background-size: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      width: 100%;
+      height: 5.208vw;
+      background: url("/assets/images/dekton/bg02.png") no-repeat center top;
+      background-size: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: calc(100% - 9vw);
+    background: url("/assets/images/dekton/bg03.png") repeat-y center;
+    background-size: 100%;
+    position: absolute;
+    top: 4.5vw;
+    left: 0;
+    z-index: 0;
+  }
+
+  .dekton_box02__cont {
+    display: flex;
+    position: relative;
+    z-index: 9;
+    > div {
+      width: 50%;
+    }
+    .box-left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 5vw;
+      .txt01 {
+        margin-right: 3vw;
+        flex-shrink: 0;
+      }
+      h3 {
+        color: #fff;
+        font-size: 5.208vw;
+        font-weight: 600;
+        line-height: 1.2;
+      }
+    }
+    .box-right {
+      padding: 5vw 0 0;
+      .block {
+        width: 100%;
+        display: flex;
+      }
+      .frame {
+        padding: 0 3vw;
+        &--01 {
+          width: calc(50% + 0.365vw);
+          background: #fff;
+        }
+        &--02 {
+          width: calc(50% - 0.365vw);
+          background: #0779f1;
+        }
+        &--03 {
+          width: 100%;
+          background: #000936;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+#dekton_box03 {
+  padding: 150px 0 150px;
+  position: relative;
+  z-index: 0;
+  .illust04 {
+    bottom: -150px;
+  }
+  .c-title02 {
+    color: #000936;
+  }
+  .benefit__block {
+    dl {
+      &:not(:last-child) {
+        margin-bottom: 120px;
+      }
+      dt {
+        background: #fff;
+        border-radius: 10px;
+        color: #000;
+        font-size: 40px;
+        font-weight: 700;
+        position: relative;
+        cursor: pointer;
+        padding: 28px 80px 20px 40px;
+        margin-bottom: 50px;
+        &:after {
+          content: "";
+          width: 40px;
+          height: 3px;
+          background: url("/assets/images/dekton/dekton_ico01.png") no-repeat
+            center;
+          background-size: contain;
+          position: absolute;
+          top: 50%;
+          right: 40px;
+          transform: translateY(-50%);
+        }
+        &.active:after {
+          height: 40px;
+          background: url("/assets/images/dekton/dekton_ico02.png") no-repeat
+            center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}
+#dekton_box04 {
+  background: url("/assets/images/dekton/dekton_bg01.png") no-repeat top;
+  background-size: contain;
+  position: relative;
+  z-index: 1;
+  padding: 230px 0 230px;
+  .c-slider01 .slick-dots li button:before {
+    border: none;
+  }
+  .c-slider01 .slick-dots li.slick-active button:before {
+    background: #0779f1;
+  }
+}
+#dekton_box05 {
+  padding: 100px 0 100px;
+  .c-title02 {
+    color: #000936;
+    margin-bottom: 50px;
+  }
+  .txt01 {
+    color: #000;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+}
+
+#dekton_box07 {
+  padding: 80px 0 0;
+}

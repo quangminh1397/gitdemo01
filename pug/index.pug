@@ -1,0 +1,478 @@
+extends _layout/default
+
+block vars
+  -title        = 'Trang chủ test'
+  -description  = 'Trang chủ - Spiderum trang tin tức'
+  -keywords     = 'Trang chủ, Spiderum'
+  -pageID       = 'top'
+  -image        = 'https://images.unsplash.com/photo-1629927506216-fcdf656d74de?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80'
+  -path         = ''
+
+block container
+  -
+    var mainvSliderArr = [
+      {src:path+"assets/images/mainv_img01.jpg",alt:"THIẾT KẾ VÔ TẬN TÍNH NĂNG TIÊN TIẾN"},
+      {src:path+"assets/images/mainv_img01.jpg",alt:"THIẾT KẾ VÔ TẬN"},
+      {src:path+"assets/images/mainv_img01.jpg",alt:"TÍNH NĂNG TIÊN TIẾN"},
+    ]
+  section#idx_main 
+    +mainvSlider("DEKTON","THIẾT KẾ VÔ TẬN TÍNH NĂNG TIÊN TIẾN",mainvSliderArr)
+  
+  section#idx_intro
+    figure.illust.illust03
+      img(src=path+"assets/images/illust05.svg", alt="illust")
+    figure.illust.illust04
+      img(src=path+"assets/images/illust06.svg", alt="illust") 
+    .inner 
+      .m-block01
+        figure
+          img(src=path+"assets/images/about_img01.jpg", alt="Giới Thiệu UPS")
+        .m-block01__cont
+          h3.c-title01
+            span Giới Thiệu UPS
+          .section
+            p Text text text text text text text text text text text text text text text text text text text text text text text text text text. Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+            p Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text...
+          .c-btn01
+            a(href="#") XEM THÊM
+
+  section#idx_system
+    .bg-wave
+    .inner
+      .system__cont
+        h3.c-title02 Hệ Thống Showroom
+        ul.list-2cols
+          li.system__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/showroom_img01.jpg", alt="Showroom Gò Vấp")
+              .system__card--sec
+                h4 Showroom Gò Vấp
+                p số 120 đường số 7, KDC Cityland - Center Hill, P.7, Q. Gò Vấp 
+          li.system__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/showroom_img02.jpg", alt="Showroom Gò Vấp")
+              .system__card--sec
+                h4 Showroom Gò Vấp
+                p số 120 đường số 7, KDC Cityland - Center Hill, P.7, Q. Gò Vấp 
+    figure.illust.illust01
+      img(src=path+"assets/images/illust01.svg", alt="")
+    figure.illust.illust02
+      img(src=path+"assets/images/illust02.svg", alt="")
+  section#box_tile
+    .inner
+      h3.c-title03 Hạng Mục Ốp Lát
+      ul.list-4cols
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+        li
+          a(href="#") 
+            figure
+              img(src=path+"assets/images/tile_img01.png", alt="ĐÁ ỐP MẶT TIỀN")
+            p ĐÁ ỐP MẶT TIỀN
+  section#box_stone
+    .inner
+      .block.block--01
+        .box-ttl
+          h3.c-title03 Đá Hoa Cương
+          ul.list-cate 
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+        .viewall-link
+          a(href="#") Xem tất cả 
+        ul.c-slider01.slider01
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green) Đá Marble Xanh (Green) Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cmf
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+      .block.block--02
+        .box-ttl
+          h3.c-title03 Đá Hoa Cương
+          ul.list-cate 
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+        .viewall-link
+          a(href="#") Xem tất cả 
+        ul.c-slider01.slider01
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cmf
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm    
+      .block.block03
+        .box-ttl
+          h3.c-title03 Đá Hoa Cương
+          ul.list-cate 
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+            li
+              a(href="#") Subcate
+        .viewall-link
+          a(href="#") Xem tất cả 
+        ul.c-slider01.slider01
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cmf
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+          li.items
+            a(href="#") 
+              figure
+                img(src=path+"assets/images/stone_img01.jpg", alt="Đá Marble Xanh (Green)")
+              .sec
+                h4 Đá Marble Xanh (Green)
+                ul.list-tag
+                  li India
+                  li Lớn
+                  li 1.6 - 1.8cm
+ 
+  section#idx_service 
+    .bg-wave
+    .inner
+      h3.c-title02 Dịch Vụ Ngành Đá
+      .service__cont 
+        ul.list-4cols
+          li
+            a(href="#")
+              figure
+                img(src=path+"assets/images/service_img01.png", alt="PHÂN PHỐI ĐÁ VẬT TƯ")
+              p PHÂN PHỐI ĐÁ VẬT TƯ
+          li
+            a(href="#")
+              figure
+                img(src=path+"assets/images/service_img01.png", alt="PHÂN PHỐI ĐÁ VẬT TƯ")
+              p PHÂN PHỐI ĐÁ VẬT TƯ
+          li
+            a(href="#")
+              figure
+                img(src=path+"assets/images/service_img01.png", alt="PHÂN PHỐI ĐÁ VẬT TƯ")
+              p PHÂN PHỐI ĐÁ VẬT TƯ
+          li
+            a(href="#")
+              figure
+                img(src=path+"assets/images/service_img01.png", alt="PHÂN PHỐI ĐÁ VẬT TƯ")
+              p PHÂN PHỐI ĐÁ VẬT TƯ
+    figure.illust.illust03
+      img(src=path+"assets/images/illust05.svg", alt="illust")
+    figure.illust.illust04
+      img(src=path+"assets/images/illust06.svg", alt="illust")
+      
+  section#idx_construction
+    .inner
+      h3.c-title02 Công Trình Thi Công
+      .viewall-link
+        a(href="#") Xem tất cả 
+      .m-block02 
+        .m-block02__cont
+          .frame01
+            figure
+              img(src=path+"assets/images/construc_img01.jpg", alt="Công Trình Thi Công")
+            .block
+              h4 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+              .sec
+                p TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
+                p TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
+              .link-detail 
+                a(href="#") Chi tiết...
+          .frame02
+            ul.c-slider01.slider02
+              li.items
+                a(href="#")
+                  figure
+                    img(src=path+"assets/images/construc_img02.jpg", alt="Công Trình Thi Công")
+                  .sec 
+                    p.tag EBL 12022
+                    h4 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+                    p.txt TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+              li.items
+                a(href="#")
+                  figure
+                    img(src=path+"assets/images/construc_img02.jpg", alt="Công Trình Thi Công")
+                  .sec 
+                    p.tag EBL 12022
+                    h4 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+                    p.txt TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+              li.items
+                a(href="#")
+                  figure
+                    img(src=path+"assets/images/construc_img02.jpg", alt="Công Trình Thi Công")
+                  .sec 
+                    p.tag EBL 12022
+                    h4 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+                    p.txt TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+              li.items
+                a(href="#")
+                  figure
+                    img(src=path+"assets/images/construc_img02.jpg", alt="Công Trình Thi Công")
+                  .sec 
+                    p.tag EBL 12022
+                    h4 TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+                    p.txt TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT 
+  section#idx_news 
+    .inner
+      h3.c-title02 Tin Tức
+      .viewall-link
+        a(href="#") Xem tất cả
+      .news__cont 
+        ul.news__list
+          li.news__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/news_img01.jpg", alt="Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa")
+              .sec 
+                h4 Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+          li.news__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/news_img01.jpg", alt="Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa")
+              h4 Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa
+          li.news__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/news_img01.jpg", alt="Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa")
+              h4 Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa
+          li.news__card
+            a(href="#")
+              figure
+                img(src=path+"assets/images/news_img01.jpg", alt="Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa")
+              h4 Bí Quyết Chọn Tra nh Đá Phòng Khách Cho Người Mệnh Hỏa
+  section#idx_contact
+    .inner 
+      .box-left
+        ul.person-slider
+          li.items
+            figure
+              img(src=path+"assets/images/person_img01.png", alt="Nguyen Van A")
+            .block 
+              h4 Nguyen Van A <br>Chủ đầu tư dự án Novaland
+              .sec 
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+          li.items
+            figure
+              img(src=path+"assets/images/person_img01.png", alt="Nguyen Van A")
+            .block 
+              h4 Nguyen Van A <br>Chủ đầu tư dự án Novaland
+              .sec 
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+          li.items
+            figure
+              img(src=path+"assets/images/person_img01.png", alt="Nguyen Van A")
+            .block 
+              h4 Nguyen Van A <br>Chủ đầu tư dự án Novaland
+              .sec 
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+                p Text text text text text text text text text text text text text text text text text text text text text text text text text text.Text text text text text text text text text text text text text text text text text text text text text text text text text text.
+      .box-right
+        .form-contact
+          h4.form-ttl ĐẶT LỊCH HẸN VÀ TƯ VẤN TRỰC TIẾP
+          p.form-txt Quý khách vui lòng để lại thông tin để được tư vấn về sản phẩm và dịch vụ của Eurostone
+          ul.form-contact__cont
+            li.cus_input
+              span.required
+              input#fullname(type='text' name='fullname' value='' placeholder="Họ và tên")
+            li.cus_input
+              span.required
+              input#number(type='text' name='number' value='' placeholder="Điện thoại")
+            li.cus_input
+              span.required
+              input#email(type='text' name='email' value='' placeholder="email")
+            li.cus_textarea
+              textarea#contentarea(name="" cols="30" rows="10" placeholder="nội dung") 
+            li.btn_gr
+              .btn_submit 
+                input(type="submit" value="GỬI EMAIL")
+                i 
+              span.required là thông tin bắt buộc

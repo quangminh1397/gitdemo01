@@ -1,72 +1,108 @@
 const gulp = require('gulp');
-const del = require('del');
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const concat = require('gulp-concat');
-const path = require('path');
 const browserSync = require('browser-sync').create();
-
-
-function copyAsset() {
-  return gulp.src(['src/assets/**/*', '!src/assets/js/libs/*']).pipe(gulp.dest('./dist/assets'));
-}
-
-function cleanSource() {
-  return del(['dist/**', '!dist']);
+const del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
+const minify = require('gulp-minify');
+const cleanCSS = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
+// Clean style when build
+function clean() {
+    return del(['./dist/assets/css/'], ['./dist/**/*.html']);
 }
 
 //compile scss into css
 function style() {
-  return gulp.src('src/scss/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/css'))
-    .pipe(browserSync.stream());
+    return gulp.src('scss/**/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(sourcemaps.write({ includeContent: false }))
+        .pipe(sourcemaps.init({ loadMaps: true }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dist/assets/css'))
+        .pipe(browserSync.stream());
+}
+
+function css() {
+    return gulp.src('styles/**/*.css')
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./dist/assets/css'))
+        .pipe(browserSync.stream());
 }
 
 //compile jade into html
 function html() {
-  return gulp.src(['src/pug/**/*.pug', '!src/pug/_layout/*.pug', '!src/pug/_modules/*.pug', '!src/pug/_mixins/*.pug'])
-    .pipe(pug({
-      doctype: 'html',
-      pretty: true
-    }))
-    .pipe(gulp.dest('./dist'))
-    .pipe(browserSync.stream());
-}
-
-
-// minify libs js
-function libJs() {
-  return gulp.src('src/assets/js/libs/*.js')
-    .pipe(concat('lib.js'))
-    .pipe(gulp.dest('./dist/assets/js/libs/'));
+    return gulp.src(['pug/**/*.pug', '!pug/_layout/*.pug', '!pug/_modules/*.pug', '!pug/_mixins/*.pug'])
+        .pipe(pug({
+            doctype: 'html',
+            pretty: true
+        }))
+        .pipe(gulp.dest('./dist/'));
 }
 
 function watch() {
-  browserSync.init({
-    server: {
-      baseDir: "./dist"
-    },
-    port: 4000
-  });
-  gulp.watch('src/assets/**/*', copyAsset).on('change', browserSync.reload);
-  gulp.watch('src/scss/**/*.scss', style).on('change', browserSync.reload);
-  gulp.watch('src/pug/**/*.pug', html).on('change', browserSync.reload);
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        },
+        port: 4000,
+        open:false
+    });
+    gulp.watch('scss/**/*.scss', { usePolling: true }, style);
+    gulp.watch('pug/**/*.pug', { usePolling: true }, html);
+    gulp.watch('assets/images/**/*.*', { usePolling: true }, images);
+    gulp.watch('assets/fonts/*', { usePolling: true }, copyFont);
+    gulp.watch('pug/**/*.pug', { usePolling: true }).on('change', browserSync.reload);
+    gulp.watch('styles/**/*.css', { usePolling: true }).on('change', browserSync.reload);
+    gulp.watch('dist/**/*.html', { usePolling: true }).on('change', browserSync.reload);
+    gulp.watch('assets/js/**/*.js', { usePolling: true }).on('change', browserSync.reload);
+    gulp.watch('assets/fonts/', { usePolling: true }).on('change', browserSync.reload);
+    gulp.watch('assets/images/*', {interval: 1000, usePolling: true }).on('change', browserSync.reload);
+}
+
+function copyFont(){
+    return gulp.src('assets/font/*')
+    .pipe(gulp.dest('./dist/assets/fonts'))
+}
+
+function js(){
+    return gulp.src('assets/js/*')
+    // .pipe(minify({
+    //     ignoreFiles: ['.combo.js', '-min.js'],
+    //     noSource:true
+    // }))
+    .pipe(gulp.dest('./dist/assets/js'))
 }
 
 
+function images(){
+    return gulp.src('assets/images/**/*.*')
+    .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({
+            plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+            ]
+        })
+    ]))
+    .pipe(gulp.dest('./dist/assets/images'))
+}
 
 // define complex tasks
-const build = gulp.series(cleanSource, style, html, libJs, copyAsset, watch);
-
+const build = gulp.series(clean,js,copyFont,images, html,style,css);
 // export tasks
-exports.cleanSource = cleanSource;
 exports.style = style;
 exports.html = html;
+exports.images = images;
+exports.copyFont = copyFont;
+exports.css = css;
+exports.js = js;
 exports.build = build;
-exports.buildJs = libJs;
 exports.watch = watch;
-exports.default = build;
+exports.default = watch;

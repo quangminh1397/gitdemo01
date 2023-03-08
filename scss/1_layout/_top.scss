@@ -1,0 +1,442 @@
+#idx_intro {
+  position: relative;
+  padding: 150px 0 100px;
+  .inner {
+    position: relative;
+    z-index: 1;
+  }
+  .illust03{
+    top: -110px;
+    z-index: 0;
+  }
+  .illust04{
+    bottom: -160px
+  }
+  @include max(1024px) {
+    padding: 60px 0 60px;
+    .illust03{
+      top: -8vw;
+    }
+    .illust04{
+      bottom: -10vw
+    }
+  }
+
+}
+
+#idx_system {
+  padding: 300px 0 100px;
+  position: relative;
+  &:after{
+    content: "";
+    width: 100%;
+    height: 55%;
+    background: #000936;
+    position: absolute;
+    top: 9vw;
+    left: 0;
+  }
+  @include max(1024px) {
+    padding: 120px 0 100px;
+  }
+  .bg-wave {
+    height:55%;
+    &::after{
+      bottom: -18vw;
+    }
+  }
+  .system {
+    &__cont {
+      position: relative;
+      z-index: 9;
+    }
+    &__card {
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      a {
+        display: block;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      &--sec {
+        padding: 0 34px 45px;
+        h4 {
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+        p {
+          position: relative;
+          display: flex;
+          &::before {
+            content: "";
+            flex-shrink: 0;
+            width: 12px;
+            height: 17px;
+            background: url("/assets/images/location_icon01.png") no-repeat
+              center;
+            background-size: contain;
+            display: block;
+            position: relative;
+            top: 4px;
+            margin-right: 10px;
+          }
+        }
+        @include max(1024px) {
+          padding: 0 30px 3vw;
+          h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+#box_tile {
+  overflow: hidden;
+  margin-bottom: 100px;
+  @include max(1024px) {
+    margin-bottom: 60px;
+  }
+}
+
+#box_stone {
+  position: relative;
+  padding: 150px 0 100px;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 15.625vw;
+    background: url("/assets/images/stone_bg_top.png") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height:100%;
+    background: url("/assets/images/stone_bg.png") no-repeat center;
+    background-size: contain;
+    z-index: 0;
+    position: absolute;
+    top: 10vw;
+    left: 0;
+  }
+  @include max(1024px) {
+    padding: 60px 0 60px;
+  }
+  .inner {
+    position: relative;
+    z-index: 1;
+  }
+  .box-ttl {
+    display: flex;
+    justify-content: space-between;
+    .c-title03 {
+      flex-shrink: 0;
+    }
+    .list-cate {
+      height: 100%;
+      display: flex;
+      li {
+        a {
+          color: #000936;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 1;
+          &:hover{
+            opacity: .7;
+          }
+        }
+        &:not(:last-child) {
+          border-right: 1px solid #000936;
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+        @include max(1024px) {
+          a {
+            font-size: 15px;
+          }
+          &:not(:last-child) {
+            margin-right: 10px;
+            padding-right: 10px;
+          }
+        }
+      }
+      @include max(767px) {
+        margin-bottom: 20px;
+      }
+    }
+    @include max(767px) {
+      display: block;
+    }
+  }
+  .block {
+    &:not(:last-child) {
+      margin-bottom: 170px;
+      @include max(1024px) {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+#idx_service {
+  position: relative;
+  padding: 200px 0 250px;
+  &::after{
+    content: "";
+    width: 100%;
+    height: calc(100% - 16vw);
+    background: #000936;
+    position: absolute;
+    top: 9vw;
+    left: 0;
+  }
+  @include max(1024px) {
+    padding: 100px 0 100px;
+  }
+  .inner {
+    position: relative;
+    z-index: 9;
+  }
+  .list-4cols > li > a {
+    color: #fff;
+  }
+}
+
+#idx_construction {
+  padding: 100px 0 100px;
+  @include max(1024px) {
+    padding: 50px 0 60px;
+  }
+  .c-title02 {
+    color: #000936;
+  }
+}
+
+#idx_news {
+  padding: 0 0 100px;
+  @include max(1024px) {
+    padding: 0 0 60px;
+  }
+  .c-title02 {
+    color: #000936;
+  }
+  .news {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 0 -35px;
+      @include max(767px) {
+        display: block;
+      }
+    }
+    &__card {
+      width: calc(50% - 40px);
+      border-top: 1px solid #bbbbbb;
+      padding: 35px 0 0;
+      margin: 0 0 35px;
+      @include max(1024px) {
+        width: calc(50% - 20px);
+      }
+      @include max(767px) {
+        width: 100%;
+        padding: 15px 0 0;
+        margin: 0 0 15px;
+      }
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      figure {
+        max-width: 120px;
+        border-radius: 5px;
+        line-height: 0;
+        overflow: hidden;
+        margin-right: 20px;
+        flex-shrink: 0;
+        @include max(490px) {
+          margin-right: 10px;
+        }
+      }
+      .sec {
+        h4 {
+          display: -webkit-box;
+          line-height: 1.375;
+          height: calc(1em * 2 * 1.375);
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 10px;
+          @include max(1024px) {
+            font-size: 15px;
+          }
+        }
+        p {
+          display: -webkit-box;
+          line-height: 1.625;
+          height: calc(1em * 2 * 1.625);
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+  }
+}
+
+#idx_contact {
+  background: #f5f5f5;
+  padding: 0 0 100px;
+  @include max(1024px) {
+    padding: 0 0 60px;
+  }
+  .inner {
+    display: flex;
+    @include max(767px) {
+      display: block;
+    }
+  }
+  .box-left,
+  .box-right {
+    width: 50%;
+    @include max(767px) {
+      width: 100%;
+    }
+  }
+  .box-left {
+    background: #000936;
+    border-radius: 10px 0px 0px 10px;
+    padding-bottom: 50px;
+    @include max(1024px) {
+      padding-bottom: 30px;
+    }
+    @include max(767px) {
+      border-radius: 5px 5px 0px 0;
+    }
+  }
+  .box-right {
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.25));
+    background: #ffffff;
+    border-radius: 0px 10px 10px 0px;
+    padding: 40px 50px 40px;
+    @include max(1024px) {
+      padding: 30px 3vw;
+      border-radius: 0px 5px 5px 0px;
+    }
+    @include max(767px) {
+      padding: 30px 5vw;
+      border-radius: 0 0 5px 5px;
+    }
+    .form {
+      &-ttl {
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      &-txt {
+        color: #333;
+        line-height: 1.375;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      &-contact {
+        .cus_input {
+          position: relative;
+          margin-bottom: 18px;
+          input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #000936;
+            border-radius: 5px;
+            background: #fff;
+            color: #000936;
+            font-size: 16px;
+            padding: 10px 20px;
+            &::placeholder {
+              color: #7c7c7c;
+              font-weight: 16px;
+            }
+          }
+          .required {
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+          }
+        }
+        .cus_textarea {
+          line-height: 0;
+          textarea {
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            border: 1px solid #000936;
+            color: #000936;
+            font-size: 16px;
+            resize: none;
+            padding: 10px 20px;
+          }
+        }
+        .btn_gr {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 18px;
+          @include max(1024px) {
+            flex-direction: column;
+            margin-top: 10px;
+            .btn_submit {
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .required {
+          display: inline-block;
+          position: relative;
+          &::before {
+            content: "*";
+            font-size: 16px;
+            color: #ff2b2b;
+          }
+        }
+      }
+      @include max(1024px) {
+        &-ttl {
+          font-size: 16px;
+        }
+        &-contact {
+          .cus_input {
+            margin-bottom: 10px;
+            input {
+              height: 40px;
+              font-size: 15px;
+              padding: 10px;
+            }
+            .required {
+              left: -12px;
+            }
+          }
+        }
+        .cus_textarea {
+          textarea {
+            height: 120px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

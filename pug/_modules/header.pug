@@ -1,0 +1,76 @@
+mixin subMenuLink(href,src,figcap,text)
+  a(href=href)
+    figure 
+      img(src=src, alt=figcap)
+      figcaption&attributes(attributes)= figcap
+    p= text
+
+header.m-header
+  .inner
+    .m-header__top
+      if pageID === 'homepage'
+        h1.m-header__logo
+          a(href="/")
+            img(src=path+"assets/images/logo.svg", alt="EuroStrone", width="280", height="62")
+      else 
+        .m-header__logo
+          a(href="/")
+            img(src=path+"assets/images/logo.svg", alt="EuroStrone", width="280", height="62")
+      .m-header__boxright
+        .m-header__search
+          input(type="text", placeholder="tìm kiếm")
+          p.btn_search
+        .m-header__phone
+          a(href="tel:0903930126") 0903 930 126
+        .m-header__mail 
+          a(href="mailto:info@eurostone.vn") info@eurostone.vn
+    .m-header__bottom
+      ul.m-header__bottom--menu
+        li
+          a(href="#") Giới thiệu
+        li
+          a(href="#") Màu Sắc
+        li
+          a(href="#") Giới thiệu
+        li
+          a(href="#") Brands
+        li.sub
+          span Hạng Mục Ốp Đá
+          .m-header__submenu
+            ul.submenu01
+              li.item
+                +subMenuLink('#',path+"assets/images/menu_img01.jpg","Phòng bếp","text text text text")
+              li.item
+                +subMenuLink('#',path+"assets/images/menu_img02.jpg","Phòng bếp")
+              li.item
+                +subMenuLink('#',path+"assets/images/menu_img03.jpg","Phòng bếp")
+              li.item
+                +subMenuLink('#',path+"assets/images/menu_img04.jpg","Phòng bếp")
+        li.sub
+          span Giả Lập Không Gian
+          .m-header__submenu
+            ul.submenu02
+              li
+                +subMenuLink('#',path+"assets/images/menu_img05.jpg","Hình dung trực tuyến")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img06.jpg","Nhà bếp 3D")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img07.jpg","Bảng thiết kế")
+        li.sub
+          span Tin Tức
+          .m-header__submenu
+            ul.submenu03
+              li
+                +subMenuLink('#',path+"assets/images/menu_img08.jpg","Blog & Sự kiện")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img09.jpg","Mẫu nhà đẹp")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img10.jpg","Bảng thiết kế")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img12.jpg","Bảng thiết kế")
+              li
+                +subMenuLink('#',path+"assets/images/menu_img11.jpg","Bảng thiết kế")
+        li
+          a(href="#") Cosentino City
+        li
+          a(href="#") Professionals

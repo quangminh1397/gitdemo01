@@ -1,0 +1,100 @@
+.m-mainv {
+  background-color: $color-main;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  padding: 120px 0 100px;
+  margin-bottom: 150px;
+  @include max(1024px) {
+    padding: 30px 0 60px;
+    margin: -1px 0 60px;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 15.625vw;
+    background: url(/assets/images/bg_main.svg) no-repeat center bottom;
+    background-size: 100%;
+    position: absolute;
+    bottom: -10.417vw;
+    left: 0;
+    z-index: -1;
+  }
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    @include max(767px) {
+      flex-direction: column;
+    }
+  }
+  &__cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    h2 {
+      font-size: 60px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.61;
+    }
+    @include max(1200px) {
+      width: 35vw;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    @include max(767px) {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 30px;
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  &__slider {
+    width: 100%;
+    max-width: 700px;
+    @include max(1200px) {
+      width: 55vw;
+    }
+    @include max(767px) {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+  }
+  .items {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .slick-dots {
+    bottom: -40px;
+    li {
+      button:before {
+        opacity: 1;
+      }
+      &.slick-active button:before {
+        background: #0779f1;
+      }
+      button:focus:before,
+      button:hover:before {
+        background: #0779f1;
+      }
+    }
+  }
+}
